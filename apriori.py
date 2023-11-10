@@ -36,7 +36,7 @@ def apriori(df, outcome_column, min_support, min_confidence):
     curr_itemset = set(itemset)
     k = 2
     while curr_itemset:
-        # Calculate itemset support and prune itemsets that are not frequent or do not contain an Outcome item
+        # Calculate itemset support and prune itemsets that are not frequent
         curr_itemset = set([item for item in curr_itemset if itemset_support(transaction_list, item) >= min_support])
         freq_itemset[k-1] = curr_itemset
         curr_itemset = join_set(curr_itemset, k)
